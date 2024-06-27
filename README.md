@@ -1,7 +1,5 @@
 # Harvard's CS50P
 
----
-
 ## Notes by: 0mgABear (YY)
 
 ## Last Updated: 26 June 2024
