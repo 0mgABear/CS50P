@@ -43,6 +43,12 @@ Float : Number with decimal points, limited
 
 ## Week 1: Conditionals
 
+- some built in syntax: > , >=, <, <=, ==, !=
+- strip() removes spaces
+
+- import operator!
+- can make use of operator.(choice) for usage of python's operator module
+
 ## Week 2: Loops
 
 ## Week 3: Exceptions
