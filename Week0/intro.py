@@ -8,5 +8,5 @@ print(f"Hello, {name}")
 
 # Creating your own function to say hello
 
-def hello(name):
+def hello(name = "world"):
   print("Hello,", name)
