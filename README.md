@@ -51,6 +51,20 @@ Float : Number with decimal points, limited
 
 ## Week 2: Loops
 
+- lists : another kind of data type
+  - list syntax: []
+- instead of hard-coding lists, use range(n)
+- if you need a new variable just because the programming feature requries it (e.g counting / updating), but we don't care about the value, use an underscore!
+  - for \_ in range(n)
+  - minor improvement
+- strings are iterable loops: for char in string
+  - useful to go through the string and do checking / whatever else.
+- sets: built in data type (others being list, tuple and dictionary)
+
+- while True: a way to introduce an infinite loop
+  - perhaps useful if you want to keep prompting for a certain input
+  - be careful! need a way to break out of the infinite loop.
+
 ## Week 3: Exceptions
 
 ## Week 4: Libraries
