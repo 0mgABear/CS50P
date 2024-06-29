@@ -63,6 +63,7 @@ Float : Number with decimal points, limited
 
 - while True: a way to introduce an infinite loop
   - perhaps useful if you want to keep prompting for a certain input
+    - when you want user input to matches a certain expectation that you have
   - be careful! need a way to break out of the infinite loop.
 
 ## Week 3: Exceptions
