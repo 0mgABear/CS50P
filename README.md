@@ -108,6 +108,55 @@ Float : Number with decimal points, limited
 
 ## Week 4: Libraries
 
+- libraries : files of code that other people have written that we can use in our own program OR code you've written to use in your other programs.
+- one or more functions / features built in
+- encourages reusability
+- random library
+  - not accessible by default, need to be loaded
+- import
+  - from
+- sys: system
+  - sys.argv - list of all the words typed in at the prompt
+    - sys.argv[\_indexes]
+  - sys.exit - exit prematurely (by design)
+  - CLI: Productivity. Faster - can configure software. Allows things to get done more quickly
+- IndexError
+- slices : subset of a data structure
+
+  - [\_start:end]
+  - each number is optional
+
+- packages : 3rd party libraries
+
+  - can be installed for more functionality
+  - PyPi
+  - cowsay
+    - ASCII art
+  - pip (comes with python) - allows you to install packages
+    - pip install ...
+
+- APIs: application programming interface
+
+  - usually refer to 3rd party services that can we can write code that write and talk to
+  - MOSTLY on internet (but not all)
+
+- requests : super popular library
+  - JSON: Javascript Object Notation
+  - JSON used as a language agnostic format for exchanging data between computers
+  - completely text based format
+- json : another python library
+
+- making your own modules / packages:
+  - from (filename) import (functionname)
+  - if just blindly calling main() at the bottom of the file, as long as the file is loaded, main + all the stuff inside main is going to get called.
+  - that will hold true even if you're just importing the file or EVEN just a function from that file alone.
+  - do not unconditionally call main in any program.
+  - method:
+    if `__name__` == `__main_`:
+    main()
+  - `__name__` : special symbol in Python
+    - special variable (automatically set by Python) to be "main"
+
 ## Week 5: Unit Tests
 
 - testing your own code, using code of your own
