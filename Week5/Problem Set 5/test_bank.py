@@ -1,4 +1,4 @@
-from bank import value
+from bank import value #type: ignore
 
 def test_value():
     assert value("Hello") == 0
