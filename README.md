@@ -205,6 +205,25 @@ Unit Tests: typically tests for functions you have written.
 
 ## Week 6: File I/O
 
+- open: to open a file. equivalent of double clicking on a file.
+- open("filename", "w")
+  - w: write
+    - recreate every time (will overwrite)
+  - a: append
+    - simple appending (adding on at the back)
+    - consider /n if needed
+  - r : read
+    - don't have to specify, it is the default behaviour
+  - returns a file handle
+- file.write(var_name)
+- file.close()
+  - could sometimes forget to close files
+  - don't strictly need to, can take another approach
+- with
+  - context
+- readlines() : special method - read lines and return as a list
+- rstrip()
+
 ## Week 7: Regular Expressions
 
 ## Week 8: Object-Oriented Programming (OOP)
