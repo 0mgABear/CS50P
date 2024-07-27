@@ -223,6 +223,33 @@ Unit Tests: typically tests for functions you have written.
   - context
 - readlines() : special method - read lines and return as a list
 - rstrip()
+- sorted() : able to look at key
+
+  - specify what key should be used
+
+- CSV: comma separated values
+  - columns
+  - excel, numbers, spreadsheet
+  - split on the ,
+- CSV Library!
+
+  - import csv
+  - can store the column names in the csv itself
+  - DictReader more flexible - can have more columns, won't necessarily break.
+
+- Lambda functions:
+
+  - defining something (a variable/ function) and then immediately using it, but never needing that function ever again
+    - get rid of that variable / function
+    - use lambda function - anonymous function, nameless!
+    - syntax: lambda student: student['name']
+    - Usage: lambda (parameter): (parameter)(index)
+      - right side : return value
+      - can take more than 1 parameter! separated by comma
+
+- PIL : pillow library
+  - image files
+  - animated gif
 
 ## Week 7: Regular Expressions
 
