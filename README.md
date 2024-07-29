@@ -253,6 +253,62 @@ Unit Tests: typically tests for functions you have written.
 
 ## Week 7: Regular Expressions
 
+- a.k.a regex (regexes)
+- pattern
+  - match user input (for example)
+  - capability to define patterns to compare data that we are receiving from somewhere else OR to clean up data
+- re library
+
+  - capability to define , check for and replace patterns
+  - re.search(pattern, string, flags=0)
+  - symbols to represent patterns
+
+    - . : any character except a new line
+    - \* : 0 or more repetitions
+    - \+ : 1 or more repetitions
+    - ? : 0 or 1 repetitions
+    - {m} : m repetitions
+    - {m,n} : m - n repetitions
+    - r: raw string
+      - telling python not to interpret, treat it literally
+      - (technically) only strictly necessary to use with \
+        - but good practice to use raw string for all regex expressions
+      - don't try to interpret \ in the usual way
+      - similar in spirit to f-string formatting
+    - ^ : matches start of the string (carrot symbol)
+    - $ : matches end of the string or just before the newline at the end of the string
+    - [] : set of characters
+    - [^] : complementing the set (opposite)
+      - the symbols inisde = the symbols you want to exclude
+    - \- : use hyphen as a range
+    - | : or
+    - (...) : a group
+    - (?:...) : non-capturing version
+
+  - use flags to configure it differently
+
+    - some flags are:
+      - re.IGNORECASE
+      - re.MULTILINE
+      - re.DOTALL
+
+  - built in shortcuts
+    - \w: word character
+    - \d: decimal digit
+    - \D: not a decimal digit
+    - \s: whitespace characters
+    - \S: not a whitespace character
+    - \w: word character (including numbers and underscore)
+    - \W: NOT a word character
+
+- how does the computer / re.search going to search if something matches a pattern?
+  - finite state machine
+  - non-deterministic finite automaton
+  - start state -> determine if it stays in the first stage or transition to the next stage
+  - did it end up in an except state / final state: depicted as double circle
+    - in the except state after finishing input = valid
+    - if not in the except state when input is finished = invalid
+
 ## Week 8: Object-Oriented Programming (OOP)
 
 ## Week 9: Et Cetera
