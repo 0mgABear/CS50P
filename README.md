@@ -284,6 +284,7 @@ Unit Tests: typically tests for functions you have written.
     - (...) : a group
       - everything in the () will be returned to you as a return value
       - can extract specific amounts of information from the user input
+      - ok to have nested parentheses if they are each solving different problems
     - (?:...) : non-capturing version
   - re.match(pattern, string, flags=0)
     - don't have to specify carrot symbol at the beginning of your regex
@@ -331,6 +332,7 @@ Unit Tests: typically tests for functions you have written.
   - AND ask a boolean question
 - .replace(what you want to replace, what you want to replace it with)
 - .removeprefix() - no need 2 arguments
+- take incremental steps of implementing a regex expression rather than trying to solve it in one shot.
 
 ## Week 8: Object-Oriented Programming (OOP)
 
