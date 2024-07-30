@@ -262,7 +262,6 @@ Unit Tests: typically tests for functions you have written.
   - capability to define , check for and replace patterns
   - re.search(pattern, string, flags=0)
   - symbols to represent patterns
-
     - . : any character except a new line
     - \* : 0 or more repetitions
     - \+ : 1 or more repetitions
@@ -283,8 +282,19 @@ Unit Tests: typically tests for functions you have written.
     - \- : use hyphen as a range
     - | : or
     - (...) : a group
+      - everything in the () will be returned to you as a return value
+      - can extract specific amounts of information from the user input
     - (?:...) : non-capturing version
-
+  - re.match(pattern, string, flags=0)
+    - don't have to specify carrot symbol at the beginning of your regex
+    - by design will start matching from the start of the string for you
+  - re.fullmatch(pattern, string, flags=0)
+    - start and end of string
+    - no need ^ or $
+  - re.sub(pattern, repl, string, count=0, flags=0)
+    - pattern: to look for
+    - repl: replacement, what you want to replace it with
+    - string: to pass in
   - use flags to configure it differently
 
     - some flags are:
@@ -302,12 +312,25 @@ Unit Tests: typically tests for functions you have written.
     - \W: NOT a word character
 
 - how does the computer / re.search going to search if something matches a pattern?
+
   - finite state machine
   - non-deterministic finite automaton
   - start state -> determine if it stays in the first stage or transition to the next stage
   - did it end up in an except state / final state: depicted as double circle
     - in the except state after finishing input = valid
     - if not in the except state when input is finished = invalid
+
+- if you need to validate something that is common (e.g. email/url), find a library to do it instead. No need to reinvent the wheel.
+
+  - typing yourself / constructing yourself might lead to more errors.
+
+- := : if and only if you want to assign from right to left AND you want to ask a if/elif question.
+  - walrus operator
+  - new to python in recent years
+  - can assign a value from right to left
+  - AND ask a boolean question
+- .replace(what you want to replace, what you want to replace it with)
+- .removeprefix() - no need 2 arguments
 
 ## Week 8: Object-Oriented Programming (OOP)
 

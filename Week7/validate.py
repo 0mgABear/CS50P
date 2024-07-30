@@ -101,8 +101,23 @@ else:
 
 # v3.4 - to solve lower-case edu in v3.3 --> upper-case EDU will not work
 # can convert input to lowercase using .lower()
+# but if there's > 1 . after the @ - it would be invalid to
 
 if re.search(r"^\w+@\w+\.edu$", email, re.IGNORECASE):
   print("Valid")
 else:
   print("Invalid")
+
+# v3.5 - making a group and making that group optional
+if re.search(r"^\w+@(\w+\.)?\w+\.edu$", email, re.IGNORECASE):
+  print("Valid")
+else:
+  print("Invalid")
+
+# version 4
+# regex used in reality
+# simplified version - catches most errors but not all, not official
+# browser-implemented
+# just use a library instead.
+
+regex_pattern = "^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
