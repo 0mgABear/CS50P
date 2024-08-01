@@ -336,4 +336,37 @@ Unit Tests: typically tests for functions you have written.
 
 ## Week 8: Object-Oriented Programming (OOP)
 
+- different paradigms
+- mostly functional programming
+- java: by design object-oriented
+- tuple : x, y
+
+  - similar to list
+  - immutable : values cannot be changed
+  - just by using a comma
+
+- Classes
+
+  - everytime you use it , you're creating an object
+  - create our own datatype
+  - general purpose tool
+  - blueprint / mould - give it a name
+    - object is when you use that blueprint/mould to build specific things
+    - object is the instantiation of the class (an instance)
+  - invent your own datatype and give it a name
+  - have attributes
+    - specifically: instance variables
+    - we can standardise what the attributes can be / what kind of values you can set them to
+  - mutable but can be made immutable
+  - passing in arguments into a Class:
+    - standardising how you're passing in data
+    - error / validity check the inputs
+  - methods: classes come with methods/functions
+    - allow to determine behaviour in a standar way
+  - def \_\_init\_\_(self):
+    - dunder init / instance method
+    - if you want to initialise the contents of an object from a class, you define this method
+
+- ... : placeholder
+
 ## Week 9: Et Cetera
