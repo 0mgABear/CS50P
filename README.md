@@ -363,10 +363,58 @@ Unit Tests: typically tests for functions you have written.
     - error / validity check the inputs
   - methods: classes come with methods/functions
     - allow to determine behaviour in a standar way
-  - def \_\_init\_\_(self):
+  - def \_\_init\_\_(self, ...args):
+    - the arguments **can be** optional.
+      - use it as `arg=None` to let it be optional.
+    - convention: self (but you can call it anything you want).
     - dunder init / instance method
     - if you want to initialise the contents of an object from a class, you define this method
+    - must have the self! if not where to put the variables?
+      - if you want to remember the attributes / instance variables.
+      - storing in self!
+  - when you're calling a class: Class() - this is a constructor call
+    - construct / instantiate a class object
+    - everything created using the class will have the same structure
+    - can pass in arguments -> can customise the contents of that object
+    - analogy: you have houses built using same blueprint (mould), but painted differently (specifications)
+    - when you call / instantiate a class, you use parentheses ().
+      - suggests that a function somewhere is called / run.
+      - the function that is run is the \_\_init\_\_ function within the Class.
+  - def \_\_str\_\_ : special method
+    - python will automatically call this function for you anytime some other function wants to see your object as a string.
+    - can define this dunder str method yourself!
+  - generally \_\_repr\_\_ more for devs.
+  - can create our own methods - real power of Classes
+
+- Difference: init vs constructors:
+  - init : initialisation method, initialises the value
+  - another python method: \_\_new\_\_
+- self.variable : can be list / dictionary for multiple values
+- Why classes over dictionaries?
+
+  - can ensure correctness of data
+  - error check
+  - design more complicated software effectively
 
 - ... : placeholder
+- while checking for input argument validty , it's a somewhat extreme response to exit the entire programe due to invalid inputs.
+
+  - might want to clean some stuff up, same some files
+  - create your own error
+
+- raise : raise an exception
+
+  - can create your own exceptions
+  - not wrong enough to quit the whole program but alert the programmer there's an error
+  - exceptional (bad)
+  - be more precise. don't have to raise a generic error. can treat all exceptions like a function
+    - e.g. ValueError(...message)
+    - can create your own error!
+
+- properties : more defense mechanisms put into place
+  - to prevent other devs from messing things up
+  - attribute with more control over
+  - @property
+- decorators: functions that modify the behaviour of other functions.
 
 ## Week 9: Et Cetera
