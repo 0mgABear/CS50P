@@ -408,13 +408,48 @@ Unit Tests: typically tests for functions you have written.
   - not wrong enough to quit the whole program but alert the programmer there's an error
   - exceptional (bad)
   - be more precise. don't have to raise a generic error. can treat all exceptions like a function
-    - e.g. ValueError(...message)
+    - e.g. ValueError(message)
     - can create your own error!
 
 - properties : more defense mechanisms put into place
   - to prevent other devs from messing things up
   - attribute with more control over
-  - @property
+  - @property - technically a function
 - decorators: functions that modify the behaviour of other functions.
+- getter: function of a Class that gets some attribute
+  - when you want to define a getter, just set @property
+  - only 1 argument
+- setter: function of a Class that sets some attribute
+  - @function_name.setter
+  - an assignment: `variable =` is enough to trigger python to use the setter function.
+  - 2 arguments
+- to prevent conflict / infinite recursion, inside your getter / setter functions, the variables cannot be the same name(s) as in your init function.
+
+  - prefix the variables in your getter / setter function with an `_`
+  - such prefixing not needed for your init function
+
+- int, str: is actually a Class
+
+- Class Methods
+  - sometimes not necessary / sensible to associate a function with objects of a class, but rather with the class itself
+  - sometimes you want certain functions to be associated with the class, no matter the objects / values
+  - @classmethod : another decorator / function - not an instance method with access to self
+    - no access to self but knows what class it is inside
+    - no need to pass in self anymore, just pass in `cls`
+    - why cls? conflict with the keyword class
+  - also have @staticmethod
+- When should you use a Class to represent something in your code?
+  - very often when you're trying to represent some real world entity
+- Up till now, writing functions inside of classes that are automatically passed a reference of self.
+  - sometimes, don't need that
+  - just need to know the Class, and might not be any objects of that Class.
+  - use Class as a container for data and/or functionality.
+- Class Variables: shared across all instances of the class.(can be int, str or list etc.)
+
+  - the variable will be accessible to all of the functions within that class.
+
+- Inheritance:
+  - design Classes in a hierarchical fashion
+  - have 1 class inherit from/borrow attribute/methods/functions from another class if they have those in common
 
 ## Week 9: Et Cetera
