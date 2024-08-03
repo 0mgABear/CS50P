@@ -184,3 +184,108 @@ def get_student():
     return Student(name, house)
   except ValueError:
     ...
+
+# version 6 - decorators
+class Student:
+  def __init__(self, name, house):
+    if not name:
+      raise ValueError("Missing Name")
+    self.name = name #instance variable
+    self.house = house #this will trigger house.setter
+  
+  def __str__(self):
+    return f"{self.name} from {self.house}"
+  
+  @property
+  def house(self):
+    return self.house
+  
+  #can keep all the error-checking inside a house setter function instead of within init
+  # called when created for the first time or when someone tries to circumvent the init method
+  @house.setter
+  def house(self, house):
+    if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+      raise ValueError("Invalidhouse")
+    self.house = house
+
+# both self.name and self.house are instance variables
+# if you have instance variables called name / house, CANNOT have a function called house
+# they are going to collide
+# decide: do you want the variable or the function to be called house?
+# cannot have both - python will confuse one for the other
+
+# v 6.1 - touch up to avoid colliding names
+# fix: have the setter NOT store the value that's passed in
+# put an underscore in front of the instance variable name
+
+# using getter & setter - ensuring programmers cannot overwrite your intended code
+class Student:
+  def __init__(self, name, house):
+    if not name:
+      raise ValueError("Missing Name")
+    self.name = name #instance variable
+    self.house = house #this will trigger house.setter
+    
+  def __str__(self):
+    return f"{self.name} from {self.house}"
+  
+  @property
+  def house(self):
+    return self._house
+  
+  @house.setter
+  def house(self, house):
+    if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+      raise ValueError("Invalidhouse")
+    self._house = house
+
+# v 6.2 - more touchups
+
+class Student:
+  def __init__(self, name, house):
+    self.name = name
+    self.house = house
+    
+  def __str__(self):
+    return f"{self.name} from {self.house}"
+  
+  @property
+  def name(self):
+    return self._name
+  
+  @name.setter
+  def name(self, name):
+    if not name:
+      raise ValueError("Missing Name")
+    self._name = name
+  
+  @property
+  def house(self):
+    return self._house
+  
+  @house.setter
+  def house(self, house):
+    if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+      raise ValueError("Invalidhouse")
+    self._house = house
+
+# version 7]
+# migrated get_student logic into Student class, implementing a class method
+
+class Student:
+  def __init__(self, name, house):
+    self.name = name
+    self.house = house
+    
+  def __str__(self):
+    return f"{self.name} from {self.house}"
+  
+  @classmethod
+  def get(cls):
+    name = input("Name: ")
+    house = input("House: ")
+    return cls(name, house)
+  
+def main():
+  student = Student.get()
+  print(student)
