@@ -437,7 +437,8 @@ Unit Tests: typically tests for functions you have written.
     - no access to self but knows what class it is inside
     - no need to pass in self anymore, just pass in `cls`
     - why cls? conflict with the keyword class
-  - also have @staticmethod
+  - also have static methods
+    - @staticmethod : decorator
 - When should you use a Class to represent something in your code?
   - very often when you're trying to represent some real world entity
 - Up till now, writing functions inside of classes that are automatically passed a reference of self.
@@ -449,7 +450,18 @@ Unit Tests: typically tests for functions you have written.
   - the variable will be accessible to all of the functions within that class.
 
 - Inheritance:
+
+  - important!
   - design Classes in a hierarchical fashion
   - have 1 class inherit from/borrow attribute/methods/functions from another class if they have those in common
+  - class ChildClass(ParentClass)
+    - parentclass / superclass
+    - to inherit functionality from parent class:
+      - super().\_\_init\_\_(property/attribute)
+  - errors are Classes too, inherited downwards!
+
+- Operator Overloading
+  - take very common symbols (e.g. + and - ) and implement own interpretation
+  - object.\_\_add\_\_(self, other)
 
 ## Week 9: Et Cetera
