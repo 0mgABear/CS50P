@@ -2,7 +2,7 @@
 
 ## Notes by: 0mgABear (YY)
 
-## Last Updated: 26 June 2024
+## Last Updated: 17 June 2024
 
 ## Week 0: Functions, Variables
 
@@ -465,3 +465,28 @@ Unit Tests: typically tests for functions you have written.
   - object.\_\_add\_\_(self, other)
 
 ## Week 9: Et Cetera
+
+- other features
+- set
+
+  - typically a collection of values in which there are no duplicates
+  - actual data type in Python
+
+- global
+
+  - top of file , considered global
+  - informing that it's intentional to change a global variable instead of a local variable
+  - generally frowned upon, things can get messy quite quickly
+  - avoid
+
+- constants
+
+  - cannot change the value
+  - can program defensively
+  - in python: honour system, but not enforced by the system
+  - by convention: capitalise to signify constants
+
+- type hints: dynamically typed language
+  - not strongly typed
+  - mypy : for checking if it's adhering to your own type hints
+  - pip install mypy
