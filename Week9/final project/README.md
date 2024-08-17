@@ -2,7 +2,7 @@
 
 # Project Name: Rich Or Not?
 
-#### Video Demo: <https://youtu.be/EuU1Jw-pvBU>
+#### Video Demo: <->
 
 #### Description:
 
