@@ -16,17 +16,11 @@ Although in reality, HDB properties also differ greatly from area to area, with 
 Proposed Method:
 Make use of OneMaps API - national map of Singapore Land Authority (SLA).
 
-## APIs used:
+## API(s) used:
 
-1. "https://api-production.data.gov.sg/v2/public/api/collections/182/metadata" - Completion Status of HDB Developments API
+1. https://www.onemap.gov.sg/api/common/elastic/search?searchVal={postal_code}&returnGeom=N&getAddrDetails=Y - OneMap API
 
-- To concretely know whether a building is a HDB - we can cross check with this dataset as OneMap API generally is not very specific.
-
-2. https://www.onemap.gov.sg/api/common/elastic/search?searchVal={postal_code}&returnGeom=N&getAddrDetails=Y - OneMap API
-
--
-
-## Raw Data Output from OneMap API without:
+## Raw Data Output from OneMap API:
 
 {'found': 1, 'totalNumPages': 1, 'pageNum': 1, 'results': [{'SEARCHVAL': 'PARC OLYMPIA', 'BLK_NO': '62', 'ROAD_NAME': 'FLORA DRIVE', 'BUILDING': 'PARC OLYMPIA', 'ADDRESS': '62 FLORA DRIVE PARC OLYMPIA SINGAPORE 506859', 'POSTAL': '506859'}]}
 
@@ -65,3 +59,25 @@ Not Present: Building
 
 Present: Building
 Not Present: Blk_No
+
+6. "269943" - 20 Astrid Hill - Good Class Bungalow Area:
+   Results: {"SEARCHVAL": "20 ASTRID HILL SINGAPORE 269943", "BLK_NO": "20", "ROAD_NAME": "ASTRID HILL", "ADDRESS": "20 ASTRID HILL SINGAPORE 269943", "POSTAL": "269943"}
+
+Present: Blk_No
+Not Present: Building
+
+## Preliminary Observations:
+
+1. HDB has no building name(s).
+2. Condominiums has a building name.
+3. Office addresses has multiple building name(s).
+
+## Limitations:
+
+1. Lack of differentiation between landed property and HDB currently as both sets of results share similar structure when queried from OneMap API.
+
+## Future Work and Development:
+
+1. Address limitation #1 - have some better way to differentiate between clients staying in HDB vs in Landed property, as affluence could be significantly different.
+2. A possible rudimentary way - to hardcode all of the landed property areas in Singapore and have a logic check against this hard-coded list.
+3. Limitation of above solution - may not be future-proof.
